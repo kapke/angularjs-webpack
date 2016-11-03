@@ -4,15 +4,13 @@ import { IProduct } from './product.interface'
 import IComponentOptions = angular.IComponentOptions;
 
 export const ProductsComponent: IComponentOptions = {
-  controller: class {
+  controller: ['Products', class {
     public products: IProduct[]
 
     constructor(Products: any) {
-      'ngInject';
-
       this.products = Products.products
     }
-  },
+  }],
   //7/ And custom class name in template
   template: `
     <div>
@@ -23,5 +21,5 @@ export const ProductsComponent: IComponentOptions = {
         </li>
       </ul>
     </div>
-  `,
-}
+  `
+};

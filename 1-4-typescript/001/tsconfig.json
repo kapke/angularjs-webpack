@@ -1,3 +1,4 @@
+//15/ tsconfig.json file contains TypeScript configuration
 {
 	"buildOnSave": false,
 	"compileOnSave": false,

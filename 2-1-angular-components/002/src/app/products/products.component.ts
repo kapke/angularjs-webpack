@@ -3,15 +3,13 @@ import IComponentOptions = angular.IComponentOptions;
 
 //21/ Whole logic and view are now in ProductsComponent
 export const ProductsComponent: IComponentOptions = {
-  controller: class {
+  controller: ['Products', class {
     public products: IProduct[];
 
     constructor(Products: any) {
-      'ngInject';
-
       this.products = Products.products
     }
-  },
+  }],
   template: `
     <div>
       <h1>Shopping list</h1>

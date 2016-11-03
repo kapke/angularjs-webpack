@@ -1,8 +1,7 @@
-const webpack = require('webpack')
-const path = require('path')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const webpack = require('webpack');
+const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const isProdEnv = process.env.WEBPACK_ENV === 'production'
 
 const config = {
 	devtool: 'source-map',
@@ -15,7 +14,7 @@ const config = {
 		extensions: ['', '.js', '.ts', '.json']
 	},
 	module: {
-		//3/ Linter wyląduje w preloaderach
+		//3/ Linter will be used in preloaders
 		preLoaders: [
 			{ test: /\.ts$/, loaders: ['tslint'], exclude: /node_modules/ },
 		],
@@ -23,11 +22,7 @@ const config = {
 			{ test: /\.ts$/, loaders: ['ts'], exclude: /node_modules/ },
 			{ test: /\.styl$/, loaders: ['style', 'css', 'stylus'] },
 		],
-	},
-	plugins: isProdEnv ? [
-		new webpack.optimize.UglifyJsPlugin(),
-		new CopyWebpackPlugin([{ from: './src/index.html', to: 'index.html' }])
-	] : [],
+	}
 }
 
 module.exports = config

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xp-run-server-url="https://xpla.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>NgAnnotate</title>
+    <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+</head>
+<body class="xp-slide">
+<div class="xp-row with-comments">
+    <div class="xp-column">
+        <div class="xp-row">
+            <xp-editor active="webpack.config.js">
+                <script id="console.sh" type="application/octetstream" src="005/console.sh" highlight></script>
+                <script id="webpack.config.js" type="application/octetstream" src="005/webpack.config.js" highlight></script>
+            </xp-editor>
+        </div>
+        <div class="xp-row">
+            <xp-editor active="src/app/app.ts" tree>
+                <script id="src/app/app.ts" highlight="1-9" type="application/octetstream" src="005/src/app/app.ts" highlight></script>
+                <script id="src/index.html" type="application/octetstream" src="005/src/index.html" highlight></script>
+                <script id="package.json" type="application/octetstream" src="005/package.json"></script>
+                <script id="src/app/products.service.ts" type="application/octetstream" src="001/src/app/products.service.ts"></script>
+                <script id="src/app/Product.ts" type="application/octetstream" src="001/src/app/Product.ts"></script>
+                <script id="src/app/app.component.ts" type="application/octetstream" src="005/src/app/app.component.ts"></script>
+                <script id="src/app/products.provider.ts" type="application/octetstream" src="005/src/app/products.provider.ts"></script>
+                <script id="src/index.ts" type="application/octetstream" src="001/src/index.ts"></script>
+                <script id="src/index.styl" type="application/octetstream" src="001/src/index.styl"></script>
+                <script id="tsconfig.json" type="application/octetstream" src="001/tsconfig.json"></script>
+            </xp-editor>
+        </div>
+    </div>
+    <div class="xp-resize-column"></div>
+    <div class="xp-column">
+        <xp-preview runner="webpack"></xp-preview>
+    </div>
+</div>
+<div class="xp-resize-row"></div>
+<div class="xp-row comments">
+    <xp-annotations>
+        <header><h1>NgAnnotate</h1></header>
+        <details>
+            <p>NgAnnotate is very useful tool that substitutes developer in declaring dependencies.</p>
+        </details>
+    </xp-annotations>
+</div>
+</body>
+</html>

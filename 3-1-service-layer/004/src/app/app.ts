@@ -10,10 +10,8 @@ angular.module('app', [])
     .service('productsService', ProductsService)
     .provider('products', ProductsProvider)
     .constant('ENABLE_DOUBLING', true)
-    .config(function (productsProvider: ProductsProvider, ENABLE_DOUBLING: boolean) {
-        'ngInject';
-
+    .config(['productsProvider', 'ENABLE_DOUBLING', function (productsProvider: ProductsProvider, ENABLE_DOUBLING: boolean) {
         if (ENABLE_DOUBLING) {
             productsProvider.enableDoubling();
         }
-    });
+    }]);

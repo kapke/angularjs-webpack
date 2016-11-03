@@ -5,15 +5,13 @@ import IComponentOptions = angular.IComponentOptions;
 /// And using that interface helps us to properly configure the component
 export const AppComponent: IComponentOptions = {
   //10/ Now controller and template are next to each other
-  controller: class {
-    public products: IProduct[]
+  controller: ['AppService', class {
+    public products: IProduct[];
 
     constructor(AppService: any) {
-      'ngInject';
-
       this.products = AppService.products
     }
-  },
+  }],
   template: `
     <div>
       <h1>Shopping list</h1>

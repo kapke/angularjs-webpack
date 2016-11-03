@@ -5,12 +5,11 @@ import {Product} from './Product';
 
 class AppComponentController {
     constructor (public products: Product[]) {
-        'ngInject';
     }
 }
 
 export const AppComponent: IComponentOptions = {
-    controller: AppComponentController,
+    controller: ['products', AppComponentController],
     template: `
         <div>
             <h1>Shopping list</h1>

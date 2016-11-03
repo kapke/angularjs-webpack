@@ -9,8 +9,6 @@ angular.module('app', [])
     .component('appComponent', AppComponent)
     .service('productsService', ProductsService)
     .provider('products', ProductsProvider)
-    .config(function (productsProvider: ProductsProvider) {
-        'ngInject';
-
+    .config(['productsProvider', (productsProvider: ProductsProvider) => {
         productsProvider.enableDoubling();
-    });
+    }]);

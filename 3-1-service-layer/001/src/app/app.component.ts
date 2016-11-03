@@ -8,14 +8,12 @@ class AppComponentController {
     public products: Product[] = [];
 
     constructor (productsService: ProductsService) {
-        'ngInject';
-
         this.products = productsService.getProducts();
     }
 }
 
 export const AppComponent: IComponentOptions = {
-    controller: AppComponentController,
+    controller: ['productsService', AppComponentController],
     template: `
         <div>
             <h1>Shopping list</h1>
